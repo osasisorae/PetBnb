@@ -1,12 +1,15 @@
-class Snake:
+import mongoengine
+import datetime
+
+class Snake(mongoengine.Document):
     ''' Our snake model'''
 
-    registered_date = None
-    species = None
+    registered_date = mongoengine.DateTimeField(default=datetime.datetime.now)
+    species = mongoengine.StringField(required=True)
 
-    length = None
-    name = None
-    is_venomous = None
+    length = mongoengine.FloatField(required=True)
+    name = mongoengine.StringField(required=True)
+    is_venomous = mongoengine.BooleanField(required=True)
 
     meta = {
         'db_alias': 'core',
