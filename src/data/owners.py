@@ -1,10 +1,13 @@
-class Owner:
-    registered_date = None
-    name = None
-    email = None
+import mongoengine
+import datetime
 
-    snake_ids = list() #TODO: create an id module/dict for different pets
-    cage_ids = list()
+class Owner(mongoengine.Document):
+    registered_date = mongoengine.DateTimeField(default=datetime.datetime.now)
+    name = mongoengine.StringField(required=True)
+    email = mongoengine.EmailField(required=True)
+
+    snake_ids = mongoengine.ListField()
+    cage_ids = mongoengine.ListField()
 
     meta = {
         'db_alias': 'core',
