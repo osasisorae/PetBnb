@@ -56,8 +56,11 @@ def find_user_intent():
     choice = input("Are you a [g]uest or [h]ost? ")
     if choice == 'h':
         return 'offer'
-
-    return 'book'
+    elif choice == 'g':
+        return 'book'
+    else:
+        print('wrong choice')
+        find_user_intent()
 
 
 if __name__ == '__main__':

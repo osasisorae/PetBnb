@@ -9,3 +9,9 @@ source .venv/bin/activate
 pip install --upgrade pip
 pip install -r requirements.txt
 ```
+
+## Usage
+Look into the src/ folder and run
+```bash
+python program.py
+```
